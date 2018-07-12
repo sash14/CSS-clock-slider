@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*          Часы             */
+
+.wrapper{
+}
+
+.circle{
+    width: 500px;
+    height: 500px;
+    border: 5px solid #455A64;
+    border-radius: 50%;
+    position: relative;
+}
+
+
+.circle:after{
+    content: "";
+    width: 1px;
+    height: 200px;
+    border-left: 2px solid #E91E63;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform-origin: bottom; 
+    animation: clock 60s normal infinite linear; 
+}
+
+@keyframes clock {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }		
+}
+
+.numbers12_3:after{
+    content: "12";
+    font-size: 40px;
+    position: absolute;
+    top: 0;
+    left: 45%;
+}
+
+.numbers12_3:before{
+    content: "3";
+    font-size: 40px;
+    position: absolute;
+    top: 46%;
+    left: 95%;
+}
+
+.number6_9:after{
+    content: "6";
+    font-size: 40px;
+    position: absolute;
+    top: 91%;
+    left: 49%;
+}
+
+.number6_9:before{
+    content: "9";
+    font-size: 40px;
+    position: absolute;
+    top: 46%;
+    left: 2%;
+}
+
+
+/*               Слайдер              */
+
+.slider-wrap{
+    width: 900px;
+    height: 400px;
+    overflow: hidden;
+    border: 5px solid #212121;
+}
+
+.slider-container{
+    width: 2700px;
+    display: flex;
+    flex-direction: row;
+    animation-name: slide;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+.slider-container div{
+    width: 900px;
+    height: 400px;
+}
+
+.slide1{
+    background: url(img/1.jpg);
+}
+
+.slide2{
+    background: url(img/2.jpg);
+}
+
+.slide3{
+    background: url(img/3.jpg);
+}
+
+@keyframes slide{
+    0%{
+        transform: translate(0px, 0px);
+    }
+    40%{
+        transform: translate(-900px, 0px);
+    }
+    80%{
+        transform: translate(-1800px, 0px);
+    }
+    95%{
+        transform: translate(0px, 0px);
+    }
+}
